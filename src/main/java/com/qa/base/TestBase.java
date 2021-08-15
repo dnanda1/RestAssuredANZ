@@ -2,6 +2,7 @@ package com.qa.base;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -23,22 +24,39 @@ public class TestBase  {
 	String path;
 
 	
-	public  TestBase() throws IOException{
+	public  TestBase() {
 		
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("config.properties");
-		prop.load(ip);
+		FileInputStream ip;
+		try {
+			ip = new FileInputStream("config.properties");
+			try {
+				prop.load(ip);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+			
+		 catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} 
+		
 		
 	}
 	
-	public String getScreenshot() throws IOException
+	public String getScreenshot() 
 	{
 		String timeStamp;
 		
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		timeStamp = new SimpleDateFormat("yyyy MM dd_HH mm ss").format(Calendar.getInstance().getTime()); 
 		File screenShotName = new File("./Screenshot//"+timeStamp+".png");
-		FileUtils.copyFile(scrFile, screenShotName);
+		try {
+			FileUtils.copyFile(scrFile, screenShotName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		 
 		String filePath = screenShotName.toString();
 	

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Successfully Retrieved the LIST_ALL_CUSTOMERS Response]]>
-    </line>
     <line>
       <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-1 Response]]>
     </line>
@@ -26,93 +23,133 @@
       <![CDATA[Successfully checked the ERROR Scenario CustomerDetailsNotFound]]>
     </line>
   </reporter-output>
-  <suite started-at="2021-08-15T20:54:35 IST" name="Default suite" finished-at="2021-08-15T20:54:37 IST" duration-ms="2099">
+  <suite started-at="2021-08-16T00:52:20 IST" name="Default suite" finished-at="2021-08-16T00:52:22 IST" duration-ms="2132">
     <groups>
     </groups>
-    <test started-at="2021-08-15T20:54:35 IST" name="Default test" finished-at="2021-08-15T20:54:37 IST" duration-ms="2099">
+    <test started-at="2021-08-16T00:52:20 IST" name="Default test" finished-at="2021-08-16T00:52:22 IST" duration-ms="2132">
       <class name="com.qa.test.AutomateApiUsingRestassured">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:35 IST" name="setup" finished-at="2021-08-15T20:54:35 IST" duration-ms="108" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:20 IST" name="setup" finished-at="2021-08-16T00:52:20 IST" duration-ms="129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ListsAllCustomerDetails()[pri:1, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:35 IST" name="ListsAllCustomerDetails" finished-at="2021-08-15T20:54:37 IST" duration-ms="1780" status="PASS">
+        <test-method signature="ListsAllCustomerDetails()[pri:1, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:20 IST" name="ListsAllCustomerDetails" finished-at="2021-08-16T00:52:22 IST" duration-ms="1729" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[correct status code returned expected [200] but found [404]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: correct status code returned expected [200] but found [404]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:907)
+at com.qa.test.AutomateApiUsingRestassured.ListsAllCustomerDetails(AutomateApiUsingRestassured.java:109)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
-            <line>
-              <![CDATA[Successfully Retrieved the LIST_ALL_CUSTOMERS Response]]>
-            </line>
           </reporter-output>
         </test-method> <!-- ListsAllCustomerDetails -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound1()[pri:2, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound1" finished-at="2021-08-15T20:54:37 IST" duration-ms="16" status="PASS">
+        <test-method signature="CustomerDetailsFound1()[pri:2, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound1" finished-at="2021-08-16T00:52:22 IST" duration-ms="61" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-1 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound1 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound2()[pri:3, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound2" finished-at="2021-08-15T20:54:37 IST" duration-ms="16" status="PASS">
+        <test-method signature="CustomerDetailsFound2()[pri:3, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound2" finished-at="2021-08-16T00:52:22 IST" duration-ms="22" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-2 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound2 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound3()[pri:4, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound3" finished-at="2021-08-15T20:54:37 IST" duration-ms="25" status="PASS">
+        <test-method signature="CustomerDetailsFound3()[pri:4, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound3" finished-at="2021-08-16T00:52:22 IST" duration-ms="18" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-3 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound3 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound4()[pri:5, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound4" finished-at="2021-08-15T20:54:37 IST" duration-ms="14" status="PASS">
+        <test-method signature="CustomerDetailsFound4()[pri:5, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound4" finished-at="2021-08-16T00:52:22 IST" duration-ms="13" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-4 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound4 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound5()[pri:6, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound5" finished-at="2021-08-15T20:54:37 IST" duration-ms="12" status="PASS">
+        <test-method signature="CustomerDetailsFound5()[pri:6, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound5" finished-at="2021-08-16T00:52:22 IST" duration-ms="15" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-5 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound5 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsFound6()[pri:7, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound6" finished-at="2021-08-15T20:54:37 IST" duration-ms="15" status="PASS">
+        <test-method signature="CustomerDetailsFound6()[pri:7, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsFound6" finished-at="2021-08-16T00:52:22 IST" duration-ms="14" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-6 Response]]>
             </line>
           </reporter-output>
         </test-method> <!-- CustomerDetailsFound6 -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="9" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="setup" finished-at="2021-08-16T00:52:22 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CustomerDetailsNotFound()[pri:8, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsNotFound" finished-at="2021-08-15T20:54:37 IST" duration-ms="20" status="PASS">
+        <test-method signature="CustomerDetailsNotFound()[pri:8, instance:com.qa.test.AutomateApiUsingRestassured@1bd39d3c]" started-at="2021-08-16T00:52:22 IST" name="CustomerDetailsNotFound" finished-at="2021-08-16T00:52:22 IST" duration-ms="24" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Successfully checked the ERROR Scenario CustomerDetailsNotFound]]>

@@ -8,10 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonAppend.Prop;
 import com.qa.base.TestBase;
 import com.qa.util.Log4j;
 
@@ -22,7 +20,9 @@ import io.restassured.specification.RequestSpecification;
 
 public class AutomateApiUsingRestassured extends TestBase {
 
-	public AutomateApiUsingRestassured() throws IOException {
+	 ObjectMapper objectMapper = new ObjectMapper();
+	
+	public AutomateApiUsingRestassured() {
 		super();
 
 	}
@@ -53,49 +53,60 @@ public class AutomateApiUsingRestassured extends TestBase {
 	String url5;
 	String url6;
 	String url7;
+	
 
 	@BeforeMethod
-	public void setup() throws IOException {
+	public void setup() {
 
 		Log4j.logupdate();
 		Log4j.testStart();
 
-		testBase = new TestBase();
+		try {
+			testBase = new TestBase();
+			BaseUrl = prop.getProperty("URL");
+			APIUrl = prop.getProperty("ListallCustomerEndpoint");
+			url = BaseUrl + APIUrl;
 
-		BaseUrl = prop.getProperty("URL");
-		APIUrl = prop.getProperty("ListallCustomerEndpoint");
-		url = BaseUrl + APIUrl;
+			APIUrl1 = prop.getProperty("CustomerFound1Endpoint");
+			url1 = BaseUrl + APIUrl1;
 
-		APIUrl1 = prop.getProperty("CustomerFound1Endpoint");
-		url1 = BaseUrl + APIUrl1;
+			APIUrl2 = prop.getProperty("CustomerFound2Endpoint");
+			url2 = BaseUrl + APIUrl2;
 
-		APIUrl2 = prop.getProperty("CustomerFound2Endpoint");
-		url2 = BaseUrl + APIUrl2;
+			APIUrl3 = prop.getProperty("CustomerFound3Endpoint");
+			url3 = BaseUrl + APIUrl3;
 
-		APIUrl3 = prop.getProperty("CustomerFound3Endpoint");
-		url3 = BaseUrl + APIUrl3;
+			APIUrl4 = prop.getProperty("CustomerFound4Endpoint");
+			url4 = BaseUrl + APIUrl4;
 
-		APIUrl4 = prop.getProperty("CustomerFound4Endpoint");
-		url4 = BaseUrl + APIUrl4;
+			APIUrl5 = prop.getProperty("CustomerFound5Endpoint");
+			url5 = BaseUrl + APIUrl5;
 
-		APIUrl5 = prop.getProperty("CustomerFound5Endpoint");
-		url5 = BaseUrl + APIUrl5;
+			APIUrl6 = prop.getProperty("CustomerFound6Endpoint");
+			url6 = BaseUrl + APIUrl6;
 
-		APIUrl6 = prop.getProperty("CustomerFound6Endpoint");
-		url6 = BaseUrl + APIUrl6;
+			APIUrl7 = prop.getProperty("CustomerNotFoundEndpoint");
+			url7 = BaseUrl + APIUrl7;
 
-		APIUrl7 = prop.getProperty("CustomerNotFoundEndpoint");
-		url7 = BaseUrl + APIUrl7;
+		} catch ( Exception e) {
+			
+			e.printStackTrace();
+		}
 
+		
 	}
 
 	@Test(priority = 1)
-	public void ListsAllCustomerDetails() throws JsonMappingException, JsonProcessingException {
+	public void ListsAllCustomerDetails() {
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url;
 			RequestSpecification httprequest = RestAssured.given();
 			Response response = httprequest.get();
+			
+			int statusCode = response.getStatusCode();
+			System.out.println("The Statuscode is" + " " + statusCode);
+			Assert.assertEquals(statusCode, 200, "correct status code returned");
 
 			String contentType = response.header("Content-Type");
 			System.out.println("Content-Type is : " + contentType);
@@ -111,7 +122,7 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
+			
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			JsonNode arr = jsonNode.findValue("data");
@@ -138,7 +149,7 @@ public class AutomateApiUsingRestassured extends TestBase {
 	}
 
 	@Test(priority = 2)
-	public void CustomerDetailsFound1() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound1(){
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url1;
@@ -163,7 +174,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -192,13 +202,13 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-1 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-1 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e ) {
 			e.printStackTrace();
 		}
 	}
 
 	@Test(priority = 3)
-	public void CustomerDetailsFound2() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound2(){
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url2;
@@ -223,7 +233,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -252,14 +261,14 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-2 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-2 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 
 	}
 
 	@Test(priority = 4)
-	public void CustomerDetailsFound3() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound3(){
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url3;
@@ -284,7 +293,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -313,13 +321,13 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-3 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-3 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Test(priority = 5)
-	public void CustomerDetailsFound4() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound4() {
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url4;
@@ -344,7 +352,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -373,13 +380,13 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-4 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-4 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Test(priority = 6)
-	public void CustomerDetailsFound5() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound5(){
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url5;
@@ -404,7 +411,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -433,13 +439,13 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-5 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-5 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Test(priority = 7)
-	public void CustomerDetailsFound6() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsFound6(){
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url6;
@@ -464,7 +470,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -493,13 +498,13 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully Retrieved the CUSTOMERDETAILS-6 Response");
 			Reporter.log("Successfully Retrieved the CUSTOMERDETAILS-6 Response");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Test(priority = 8)
-	public void CustomerDetailsNotFound() throws JsonMappingException, JsonProcessingException {
+	public void CustomerDetailsNotFound() {
 		Log4j.testStart();
 		try {
 			RestAssured.baseURI = url7;
@@ -524,7 +529,6 @@ public class AutomateApiUsingRestassured extends TestBase {
 			System.out.println(bodyAsString);
 
 			String json = bodyAsString;
-			ObjectMapper objectMapper = new ObjectMapper();
 			JsonNode jsonNode = objectMapper.readTree(json);
 
 			String status = jsonNode.findValue("status").asText();
@@ -541,7 +545,7 @@ public class AutomateApiUsingRestassured extends TestBase {
 			Log4j.info("Successfully checked the ERROR Scenario CustomerDetailsNotFound");
 			Reporter.log("Successfully checked the ERROR Scenario CustomerDetailsNotFound");
 			Log4j.testEnd();
-		} catch (Exception e) {
+		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 
