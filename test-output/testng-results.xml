@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Successfully Retrieved the LIST_ALL_CUSTOMERS Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-1 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-2 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-3 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-4 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-5 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-6 Response]]>
+    </line>
+    <line>
+      <![CDATA[Successfully checked the ERROR Scenario CustomerDetailsNotFound]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2021-08-15T20:54:35 IST" name="Default suite" finished-at="2021-08-15T20:54:37 IST" duration-ms="2099">
+    <groups>
+    </groups>
+    <test started-at="2021-08-15T20:54:35 IST" name="Default test" finished-at="2021-08-15T20:54:37 IST" duration-ms="2099">
+      <class name="com.qa.test.AutomateApiUsingRestassured">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:35 IST" name="setup" finished-at="2021-08-15T20:54:35 IST" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="ListsAllCustomerDetails()[pri:1, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:35 IST" name="ListsAllCustomerDetails" finished-at="2021-08-15T20:54:37 IST" duration-ms="1780" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the LIST_ALL_CUSTOMERS Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- ListsAllCustomerDetails -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound1()[pri:2, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound1" finished-at="2021-08-15T20:54:37 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-1 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound1 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound2()[pri:3, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound2" finished-at="2021-08-15T20:54:37 IST" duration-ms="16" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-2 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound2 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound3()[pri:4, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound3" finished-at="2021-08-15T20:54:37 IST" duration-ms="25" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-3 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound3 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound4()[pri:5, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound4" finished-at="2021-08-15T20:54:37 IST" duration-ms="14" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-4 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound4 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound5()[pri:6, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound5" finished-at="2021-08-15T20:54:37 IST" duration-ms="12" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-5 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound5 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsFound6()[pri:7, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsFound6" finished-at="2021-08-15T20:54:37 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully Retrieved the CUSTOMERDETAILS-6 Response]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsFound6 -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="setup" finished-at="2021-08-15T20:54:37 IST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CustomerDetailsNotFound()[pri:8, instance:com.qa.test.AutomateApiUsingRestassured@3b0fe47a]" started-at="2021-08-15T20:54:37 IST" name="CustomerDetailsNotFound" finished-at="2021-08-15T20:54:37 IST" duration-ms="20" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Successfully checked the ERROR Scenario CustomerDetailsNotFound]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CustomerDetailsNotFound -->
+      </class> <!-- com.qa.test.AutomateApiUsingRestassured -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
